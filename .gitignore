@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 audios/*
+.envrc
+stability_0.*
