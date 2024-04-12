@@ -1,7 +1,6 @@
-import io
+import os
 import asyncio
 import time
-from pydub import AudioSegment
 
 from llm import GPTAgent
 from async_player import ElevenLabsWrapper
@@ -40,6 +39,8 @@ async def main():
             )
 
             folder_name = f'stability_{stability}_similarity_{similarity}'
+            if not os.path.exists(folder_name):
+                os.makedirs(folder_name)
             turn_audio_bucket = []
             while True:
                 start = time.perf_counter()
